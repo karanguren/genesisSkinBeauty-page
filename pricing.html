@@ -1,845 +1,518 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="es-ES">
+<html lang="es-ES">
 <head>
-<!-- Document Meta
-============================================= -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--IE Compatibility Meta-->
-<meta name="author" content="wplly" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="construction html5 template">
-<link href="assets/images/favicon/favicon.ico" rel="icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo — Genesis Skin & Beauty</title>
 
-<!-- Fonts
-============================================= -->
-<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CRaleway:100,200,300,400,500,600,700,800%7CDroid+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<!-- Stylesheets
-============================================= -->
-<link href="assets/css/external.css" rel="stylesheet">
-<!-- Extrnal CSS -->
-<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-<!-- Boostrap Core CSS -->
-<link href="assets/css/style.css" rel="stylesheet">
-<!-- Style CSS -->
+  <style>
+    :root{ --badge-bg:#c2ded1; --badge-ink:#103b33; }
+    .card{ border:0; border-radius:1rem; box-shadow:0 10px 24px rgba(0,0,0,.06); height:100%; }
+    .card-img-top{ border-top-left-radius:1rem; border-top-right-radius:1rem; aspect-ratio:1/1; object-fit:cover; }
+    .price.badge{ background:var(--badge-bg); color:var(--badge-ink); }
+    .navbar-blur{ backdrop-filter:saturate(180%) blur(8px); background:rgba(255,255,255,.7); }
+    .modal-img{ width:100%; border-radius:.75rem; object-fit:cover; max-height:320px; }
+    .tag.badge{ background:#f3f4f6; color:#374151; }
+    footer{ background:#f8f9fa; padding:2rem 0; }
+    footer img{ max-width:140px; margin-bottom:1rem; }
+    .widget-social-icon a{ color:#111; font-size:1.5rem; margin:0 .5rem; transition:color .3s; }
+    .widget-social-icon a:hover{ color:coral; }
 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-<!--[if lt IE 9]>
-      <script src="assets/js/html5shiv.js"></script>
-      <script src="assets/js/respond.min.js"></script>
-    <![endif]-->
+	/* HERO full image */
+		.hero-section {
+			position: relative;
+			background: url('assets/images/web-new/h1.png') center/cover no-repeat;
+			color: #fff;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden
+		}
 
-<!-- Document Title
-============================================= -->
-<title>Piedy</title>
+		@media (min-width:768px) {
+			.hero-section {
+				background-attachment: fixed
+			}
+		}
+
+		.hero-overlay {
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(180deg, rgb(242 197 181 / 54%), rgb(121 102 102 / 25%));
+		}
+
+		.hero-overlay.soft {
+			background: radial-gradient(60% 60% at 50% 40%, rgba(255, 255, 255, .06) 0%, rgba(255, 255, 255, 0) 60%)
+		}
+
+		.hero-content {
+			position: relative;
+			text-align: center;
+			z-index: 2;
+			max-width: 760px;
+			backdrop-filter: saturate(120%) blur(4px)
+		}
+
+		.hero-content h1 {
+			font-family: "Playfair Display", serif;
+			font-size: clamp(32px, 6vw, 58px);
+			margin-bottom: 1rem;
+			letter-spacing: .3px;
+			background: linear-gradient(180deg, #fff, #f4e9e7 60%, #ecd8d5);
+			-webkit-background-clip: text;
+			background-clip: text;
+			color: transparent;
+			opacity: 0;
+			animation: fadeInDown 1s .1s ease-out forwards
+		}
+
+		.hero-content p {
+			font-size: 1.15rem;
+			margin-bottom: 1.5rem;
+			color: #f8f8f8;
+			opacity: 0;
+			animation: fadeInUp 1.1s .25s ease-out forwards
+		}
+
+		.sparkles {
+			position: absolute;
+			inset: 0;
+			pointer-events: none;
+			z-index: 1
+		}
+
+		.sparkles span {
+			position: absolute;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background: rgba(221, 145, 183, 0.7);
+			filter: blur(.5px);
+			opacity: .0;
+			animation: float 8s linear infinite
+		}
+
+		.sparkles span:nth-child(1) {
+			top: 70%;
+			left: 15%;
+			animation-delay: .2s
+		}
+
+		.sparkles span:nth-child(2) {
+			top: 30%;
+			left: 80%;
+			animation-delay: .9s
+		}
+
+		.sparkles span:nth-child(3) {
+			top: 20%;
+			left: 25%;
+			animation-delay: 1.6s
+		}
+
+		.sparkles span:nth-child(4) {
+			top: 60%;
+			left: 60%;
+			animation-delay: 2.2s
+		}
+
+		.sparkles span:nth-child(5) {
+			top: 45%;
+			left: 40%;
+			animation-delay: 3s
+		}
+
+		.sparkles span:nth-child(6) {
+			top: 75%;
+			left: 75%;
+			animation-delay: 3.8s
+		}
+
+		@keyframes float {
+			0% {
+				transform: translateY(12px) scale(.8);
+				opacity: 0
+			}
+
+			20% {
+				opacity: .7
+			}
+
+			50% {
+				transform: translateY(-10px) scale(1)
+			}
+
+			80% {
+				opacity: .7
+			}
+
+			100% {
+				transform: translateY(-24px) scale(.9);
+				opacity: 0
+			}
+		}
+
+		.hero-content {
+			position: relative;
+			text-align: center;
+			z-index: 2;
+			max-width: 720px
+		}
+
+		.hero-content h1 {
+			font-family: "Playfair Display", serif;
+			font-size: clamp(32px, 6vw, 56px);
+			margin-bottom: 1rem;
+			opacity: 0;
+			animation: fadeInDown 1s .1s ease-out forwards
+		}
+
+		.hero-content p {
+			font-size: 1.2rem;
+			margin-bottom: 1.5rem;
+			opacity: .9;
+			opacity: 0;
+			animation: fadeInUp 1.1s .25s ease-out forwards
+		}
+
+		/* Logos */
+		.logos img {
+			object-fit: contain;
+			filter: grayscale(100%);
+			opacity: .75;
+			transition: transform .3s ease, filter .3s ease, opacity .3s ease
+		}
+
+		.logos img:hover {
+			transform: scale(1.08);
+			filter: none;
+			opacity: 1
+		}
+
+		/* Hovers */
+		.btn-dark {
+			transition: all .25s ease
+		}
+
+		.btn-dark:hover {
+			background: linear-gradient(180deg, var(--accent), #f7dcd9);
+			color: #111;
+			transform: translateY(-2px);
+			box-shadow: 0 10px 24px rgba(231, 185, 181, .35)
+		}
+
+		.btn-outline-light {
+			transition: all .25s ease
+		}
+
+		.btn-outline-light:hover {
+			background: #fff;
+			color: var(--ink);
+			transform: scale(1.05)
+		}
+
+		.card {
+			transition: transform .3s ease, box-shadow .3s ease
+		}
+
+		.card:hover {
+			transform: translateY(-6px);
+			box-shadow: 0 16px 30px rgba(0, 0, 0, .12)
+		}
+
+		/* Scroll reveal */
+		/* [data-animate]{opacity:0;transform:translateY(26px);transition:opacity .8s ease, transform .8s ease}
+		.visible{opacity:1 !important;transform:translateY(0) !important} */
+
+		/* Keyframes */
+		@keyframes fadeInDown {
+			from {
+				opacity: 0;
+				transform: translateY(-30px)
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0)
+			}
+		}
+
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				transform: translateY(30px)
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0)
+			}
+		}
+
+
+		.card {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			min-width: 0;
+			color: #212529;
+			word-wrap: break-word;
+			background-color: #c0afac;
+			background-clip: border-box;
+			border: none;
+			border-radius: 10px;
+		}
+
+		.card-img,
+		.card-img-top {
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+		}
+
+		.card-body {
+			flex: 1 1 auto;
+			padding: 1rem;
+			color: var(--bs-card-color);
+		}
+  </style>
 </head>
 <body>
-<div class="preloader">
-	<div class="spinner">
-		<div class="bounce1">
-		</div>
-		<div class="bounce2">
-		</div>
-		<div class="bounce3">
-		</div>
-	</div>
-</div>
-<!-- Header
-    ============================================= -->
-	<header id="navbar-spy" class="transparent-header">
-		<nav id="primary-menu" class="navbar navbar-fixed-top style-1">
-			<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					</button>
-					<a class="logo" href="index.html">
-						<img src="assets/images/logo/logo-light.png" alt="Yellow Hats">
-					</a>
-				</div>
-				
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav navbar-left">
-						<li class="has-dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle">Home</a>
-							<ul class="mega-menu">
-								<li>
-									<ul>
-										<li>
-											<a href="home-1.html">home page 1</a>
-										</li>
-										<li>
-											<a href="home-2.html">home page 2</a>
-										</li>
-										<li>
-											<a href="home-3.html">home page 3</a>
-										</li>
-										<li>
-											<a href="home-4.html">home page 4</a>
-										</li>
-										<li>
-											<a href="home-5.html">home page 5</a>
-										</li>
-										<li>
-											<a href="home-6.html">home page 6</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<ul>
-										<li>
-											<a href="home-7.html">home page 7</a>
-										</li>
-										<li>
-											<a href="home-8.html">home page 8</a>
-										</li>
-										<li>
-											<a href="home-9.html">home one page</a>
-										</li>
-										<li>
-											<a href="home-10.html">home shop page</a>
-										</li>
-										<li>
-											<a href="home-11.html">home architect</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<!-- li end -->
-						<li class="has-dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle">about</a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-submenu">
-									<a href="#" data-toggle="dropdown" class="dropdown-toggle">about us</a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="about.html">about us 2</a>
-										</li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="#" data-toggle="dropdown" class="dropdown-toggle">our team</a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="team-1.html">team 1</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="testimonials.html">testimonials</a>
-								</li>
-								<li>
-									<a href="faq.html">Preguntas Frecuentes</a>
-								</li>
-							</ul>
-						</li>
-						<!-- li end -->
-						<li class="has-dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle">services</a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-submenu">
-									<a href="#" data-toggle="dropdown" class="dropdown-toggle">our services</a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="services.html">service 2</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="pricing.html">pricing</a>
-								</li>
-							</ul>
-						</li>
-						<!-- li end -->
-						<li class="has-dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle">projects</a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-submenu">
-									<a href="#" data-toggle="dropdown" class="dropdown-toggle">project grid</a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="projects-grid-2col.html">2 column</a>
-										</li>
-										<li>
-											<a href="projects-grid-3col.html">3 column</a>
-										</li>
-										<li>
-											<a href="projects-grid-4col.html">4 column</a>
-										</li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="#" data-toggle="dropdown" class="dropdown-toggle">project fullwidth</a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="projects-fullwidth-2col.html">2 column</a>
-										</li>
-										<li>
-											<a href="projects-fullwidth-3col.html">3 column</a>
-										</li>
-										<li>
-											<a href="projects-fullwidth-4col.html">4 column</a>
-										</li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="#" data-toggle="dropdown" class="dropdown-toggle">single project</a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="project-single-1.html">single 1</a>
-										</li>
-										<li>
-											<a href="project-single-2.html">single 2</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<!-- li end -->
-						<li class="has-dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle">features</a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-submenu">
-									<a href="#" data-toggle="dropdown" class="dropdown-toggle">pages</a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="404.html">404</a>
-										</li>
-										<li>
-											<a href="soon.html">coming soon</a>
-										</li>
-										<li>
-											<a href="maintenance.html">maintenance</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="elements-cta.html">call to action</a>
-								</li>
-							</ul>
-						</li>
-						<!-- li end -->
-						<li class="has-dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle">blog</a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-submenu">
-									<a href="#" data-toggle="dropdown" class="dropdown-toggle">grid</a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="blog-grid-left-sidebar.html">left sidebar</a>
-										</li>
-										<li>
-											<a href="blog-grid-right-sidebar.html">right sidebar</a>
-										</li>
-										<li>
-											<a href="blog-grid-full-width.html">full width</a>
-										</li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="#" data-toggle="dropdown" class="dropdown-toggle">standard</a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="blog-standard-left-sidebar.html">left sidebar</a>
-										</li>
-										<li>
-											<a href="blog-standard-right-sidebar.html">right sidebar</a>
-										</li>
-										<li>
-											<a href="blog-standard-full-width.html">full width</a>
-										</li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="#" data-toggle="dropdown" class="dropdown-toggle">single</a>
-									<ul class="dropdown-menu left">
-										<li>
-											<a href="blog-single-left-sidebar.html">single left sidebar</a>
-										</li>
-										<li>
-											<a href="blog-single-right-sidebar.html">single right sidebar</a>
-										</li>
-										<li>
-											<a href="blog-single-full-width.html">single full width</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<!-- li end -->
-						<li class="has-dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle">shop</a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-submenu">
-									<a href="#" data-toggle="dropdown" class="dropdown-toggle">shop products</a>
-									<ul class="dropdown-menu left">
-										<li>
-											<a href="shop-right-sidebar.html">shop right sidebar</a>
-										</li>
-										<li>
-											<a href="shop-left-sidebar.html">shop left sidebar</a>
-										</li>
-										<li>
-											<a href="shop-full-width.html">shop fullwidth</a>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<a href="shop-category.html">shop category</a>
-								</li>
-								<li>
-									<a href="shop-single.html">shop single</a>
-								</li>
-								<li>
-									<a href="shop-cart.html">shop cart</a>
-								</li>
-							</ul>
-						</li>
-						<!-- li end -->
-						<li class="has-dropdown pull-left">
-							<a href="contact.html" class="dropdown-toggle">contacto</a>
-						</li>
-						<!-- li end -->
-					</ul>
-					
-					<!-- Mod-->
-					<div class="module module-search pull-left">
-						<div class="search-icon">
-							<i class="fa fa-search"></i>
-							<span class="title">search</span>
-						</div>
-						<div class="search-box">
-							<form class="search-form">
-								<div class="input-group">
-									<input type="text" class="form-control" placeholder="Type Your Search Words">
-									<span class="input-group-btn">
-									<button class="btn" type="button"><i class="fa fa-search"></i></button>
-									</span>
-								</div>
-								<!-- /input-group -->
-							</form>
-						</div>
-					</div>
-					<!-- .module-search-->
-					<!-- .module-cart -->
-					<div class="module module-cart pull-left">
-						<div class="cart-icon">
-							<i class="fa fa-shopping-cart"></i>
-							<span class="title">shop cart</span>
-							<span class="cart-label">2</span>
-						</div>
-						<div class="cart-box">
-							<div class="cart-overview">
-								<ul class="list-unstyled">
-									<li>
-										<img class="img-responsive" src="assets/images/shop/thumb/1h.png" alt="product"/>
-										<div class="product-meta">
-											<h5 class="product-title">CST/Berger</h5>
-											<p class="product-price">Price: $68.00 </p>
-											<p class="product-quantity">Quantity: 1</p>
-										</div>
-										<a class="cancel" href="#">cancel</a>
-									</li>
-									<li>
-										<img class="img-responsive" src="assets/images/shop/thumb/2h.png" alt="product"/>
-										<div class="product-meta">
-											<h5 class="product-title">Charger/Radio</h5>
-											<p class="product-price">Price: $180.00 </p>
-											<p class="product-quantity">Quantity: 1</p>
-										</div>
-										<a class="cancel" href="#">cancel</a>
-									</li>
-								</ul>
-							</div>
-							<div class="cart-total">
-								<div class="total-desc">
-									<h5>CART SUBTOTAL :</h5>
-								</div>
-								<div class="total-price">
-									<h5>$248.00</h5>
-								</div>
-							</div>
-							<div class="clearfix">
-							</div>
-							<div class="cart-control">
-								<a class="btn btn-primary" href="#">view cart</a>
-								<a class="btn btn-secondary pull-right" href="#">check out</a>
-							</div>
-						</div>
-					</div>
-					<!-- .module-cart end -->
-					
-				</div>
-				<!-- /.navbar-collapse -->
-			</div>
-			<!-- /.container-fluid -->
-		</nav>
-	</header>
 
-<!-- Page Title
-============================================= -->
-<section class="bg-overlay bg-overlay-gradient pb-0">
-	<div class="bg-section" >
-		<img src="assets/images/page-title/2.jpg" alt="Background"/>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12">
-				<div class="page-title title-1 text-center">
-					<div class="title-bg">
-						<h2>Pricing Tables</h2>
-					</div>
-					<ol class="breadcrumb">
-						<li>
-							<a href="index.html">Home</a>
-						</li>
-						<li>
-							<a href="services.html">Services</a>
-						</li>
-						<li class="active">Pricing</li>
-					</ol>
-				</div>
-				<!-- .page-title end -->
-			</div>
-			<!-- .col-md-12 end -->
-		</div>
-		<!-- .row end -->
-	</div>
-	<!-- .container end -->
-</section>
+  <!-- Header -->
+  <header class="navbar navbar-expand-lg navbar-light sticky-top navbar-blur">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Genesis Skin & Beauty</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav id="mainNav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="productos.html">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#beneficios">Beneficios</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#certificaciones">Certificaciones</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<!-- Pricing #1
-============================================= -->
-<section id="pricing" class="pricing">
-	<div class="container">
-		<div class="row">
-			
-			<!-- Pricing Packge #1
-			============================================= -->
-			<div class="col-md-4 col-sm-4 col-xs-12 price-table">
-				<div class="panel">
-					<!--  Packge Body  -->
-					<div class="panel-body">
-						<h4>
-							<span class="symbol">$</span>
-							50
-							<span class="time">/ monthly</span>
-						</h4>
-						<p>Starter Plan</p>
-					</div>
-					<ul class="list-group">
-						<li class="list-group-item text-capitalize">Option Number 1</li>
-						<li class="list-group-item text-capitalize">Option Number 2</li>
-						<li class="list-group-item text-capitalize">Option Number 3</li>
-						<li class="list-group-item text-capitalize">Option Number 4</li>
-						<li class="list-group-item text-capitalize">Option Number 5</li>
-						<li class="list-group-item text-capitalize">Option Number 6</li>
-					</ul>
-					<!--  Packge Footer  -->
-					<div class="panel-footer">
-						<a class="btn btn-secondary btn-block " href="#">get started now <i class="fa fa-plus ml-xs"></i></a>
-					</div>
-				</div>
-			</div>
-			<!-- Package End -->
-			
-			<!-- Pricing Packge #2
-			============================================= -->
-			<div class="col-md-4 col-sm-4 col-xs-12 price-table">
-				<div class="panel">
-					<!--  Packge Body  -->
-					<div class="panel-body">
-						<h4>
-							<span class="symbol">$</span>
-							70
-							<span class="time">/ monthly</span>
-						</h4>
-						<p>basic Plan</p>
-					</div>
-					<ul class="list-group">
-						<li class="list-group-item text-capitalize">Option Number 1</li>
-						<li class="list-group-item text-capitalize">Option Number 2</li>
-						<li class="list-group-item text-capitalize">Option Number 3</li>
-						<li class="list-group-item text-capitalize">Option Number 4</li>
-						<li class="list-group-item text-capitalize">Option Number 5</li>
-						<li class="list-group-item text-capitalize">Option Number 6</li>
-					</ul>
-					<!--  Packge Footer  -->
-					<div class="panel-footer">
-						<a class="btn btn-secondary btn-block " href="#">get started now <i class="fa fa-plus ml-xs"></i></a>
-					</div>
-				</div>
-			</div>
-			<!-- Package End -->
-			
-			<!-- Pricing Packge #3
-			============================================= -->
-			<div class="col-md-4 col-sm-4 col-xs-12 price-table">
-				<div class="panel">
-					<!--  Packge Body  -->
-					<div class="panel-body">
-						<h4>
-							<span class="symbol">$</span>
-							90
-							<span class="time">/ monthly</span>
-						</h4>
-						<p>advanced Plan</p>
-					</div>
-					<ul class="list-group">
-						<li class="list-group-item text-capitalize">Option Number 1</li>
-						<li class="list-group-item text-capitalize">Option Number 2</li>
-						<li class="list-group-item text-capitalize">Option Number 3</li>
-						<li class="list-group-item text-capitalize">Option Number 4</li>
-						<li class="list-group-item text-capitalize">Option Number 5</li>
-						<li class="list-group-item text-capitalize">Option Number 6</li>
-					</ul>
-					<!--  Packge Footer  -->
-					<div class="panel-footer">
-						<a class="btn btn-secondary btn-block " href="#">get started now <i class="fa fa-plus ml-xs"></i></a>
-					</div>
-				</div>
-			</div>
-			<!-- Package End -->
-			
-		</div>
-		<!-- .row end -->
-	</div>
-	<!-- .container end -->
-</section>
+  <!-- Sub-hero -->
+  <section class="py-5 border-bottom" style="background:#faf5f2">
+    <div class="container">
+      <h1 class="h2 mb-2">Catálogo de productos</h1>
+      <p class="text-secondary mb-0">Haz clic en cualquier producto para ver su descripción completa.</p>
+    </div>
+  </section>
 
-<!-- Call To Action #3
-============================================= -->
-<section id="cta-3" class="cta cta-3 bg-overlay bg-overlay-theme text-center">
-	<div class="bg-section" >
-		<img src="assets/images/call/2.jpg" alt="Background"/>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
-				<h2>Quality Comes First</h2>
-				<p>Cutting-edge construction quality management system LATISTA ensures high quality standards at all of the company’s sites. The control mechanism allows integrated monitoring of works at all stages of construction and includes over 100 quality assessment benchmarks.</p>
-				<div class="signiture">
-					<img src="assets/images/call/sign.png" alt="signiture"/>
-				</div>
-			</div>
-			<!-- .col-md-8 end -->
-		</div>
-		<!-- .row end -->
-	</div>
-	<!-- .container end -->
-</section>
-<!-- #cta-3 end -->
+  <!-- Grid de productos -->
+  <main class="py-4">
+    <div class="container">
+      <div class="row g-3">
+        <!-- Producto 1 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=1200&auto=format&fit=crop" alt="Exfoliante Coconut Glow">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Exfoliante — Coconut Glow</strong>
+                <div class="text-secondary small">Suaviza e hidrata con aroma tropical.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$16</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Exfoliante Corporal — Coconut Glow"
+                data-price="$16"
+                data-img="https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=1200&auto=format&fit=crop"
+                data-desc="Exfoliante corporal con cristales finos de azúcar y aceites nutritivos. Elimina células muertas, deja la piel tersa y luminosa con un sutil aroma a coco."
+                data-benefits="• Suaviza la textura de la piel|• Aporta brillo saludable|• Nutre con aceites naturales|• Aroma tropical relajante"
+                data-tags="Exfoliante,Tropical,Piel Seca"
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
 
-<!-- Service Block #1
-============================================= -->
-<section id="service-1" class="service service-1 bg-gray">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
-				<div class="heading heading-2 text-center">
-					<div class="heading-bg">
-						<p class="mb-0">what we can do ?</p>
-						<h2>our services</h2>
-					</div>
-					<p class="mb-0 mt-md">Yellow Hats is a leading developer of A-grade commercial, industrial and residential projects in USA. Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly.</p>
-				</div>
-				<!-- .heading end -->
-			</div>
-			<!-- .col-md-6 end -->
-		</div>
-		<!-- .row end -->
-		<div class="row">
-			<!-- Service Block #1 -->
-			<div class="col-xs-12 col-sm-4 col-md-4 service-block">
-				<div class="service-img">
-					<img src="assets/images/services/grid/1.jpg" alt="service">
-				</div>
-				<div class="service-content">
-					<img src="assets/images/services/icons/i32/1.png" alt="icons"/>
-					<div class="service-desc">
-						<h4>Tiling &amp; Painting</h4>
-						<p>Tiling is an effective way to add elegance and aremodeling team specializes in tile installation and works directly with each homeowner.</p>
-						<a class="read-more" href="#"><i class="fa fa-plus"></i>
-							<span>read more</span>
-						</a>
-					</div>
-				</div>
-			</div>
-			<!-- .col-md-4 end -->
-			
-			<!-- Service Block #2 -->
-			<div class="col-xs-12 col-sm-4 col-md-4 service-block">
-				<div class="service-img">
-					<img src="assets/images/services/grid/2.jpg" alt="service">
-				</div>
-				<div class="service-content">
-					<img src="assets/images/services/icons/i32/2.png" alt="icons"/>
-					<div class="service-desc">
-						<h4>Renovations</h4>
-						<p>Yellow Hats has full service renovation expertise team , we are equipped with the right tools and people to handle projects of all sizes & provide high quality renovation.</p>
-						<a class="read-more" href="#"><i class="fa fa-plus"></i>
-							<span>read more</span>
-						</a>
-					</div>
-				</div>
-			</div>
-			<!-- .col-md-4 end -->
-			
-			<!-- Service Block #3 -->
-			<div class="col-xs-12 col-sm-4 col-md-4 service-block">
-				<div class="service-img">
-					<img src="assets/images/services/grid/3.jpg" alt="service">
-				</div>
-				<div class="service-content">
-					<img src="assets/images/services/icons/i32/3.png" alt="icons"/>
-					<div class="service-desc">
-						<h4>Design &amp; Build</h4>
-						<p>Yellow Hats company aim to eliminate the task of dividing your project between other different construction companies to offer you design and build services for you.</p>
-						<a class="read-more" href="#"><i class="fa fa-plus"></i>
-							<span>read more</span>
-						</a>
-					</div>
-				</div>
-			</div>
-			<!-- .col-md-4 end -->
-		</div>
-		<!-- .row end -->
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
-				<a class="btn btn-secondary mt-md" href="#">All Services <i class="fa fa-plus ml-xs"></i></a>
-			</div>
-			<!-- .col-md-12 end -->
-		</div>
-		<!-- .row end -->
-	</div>
-	<!-- .container end -->
-</section>
-<footer id="footer" class="footer-1">
-	<!-- Contact Bar
-	============================================= -->
-	<div class="container footer-widgtes">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12">
-				<div class="widgets-contact">
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-4 widget">
-							<div class="widget-contact-icon pull-left">
-								<i class="lnr lnr-map"></i>
-							</div>
-							<div class="widget-contact-info">
-								<p class="text-capitalize text-white">visit us</p>
-								<p class="text-capitalize font-heading">tanta , alGharbia, egypt.</p>
-							</div>
-						</div>
-						<!-- .widget end -->
-						<div class="col-xs-12 col-sm-12 col-md-4 widget">
-							<div class="widget-contact-icon pull-left">
-								<i class="lnr lnr-envelope"></i>
-							</div>
-							<div class="widget-contact-info">
-								<p class="text-capitalize text-white">email us</p>
-								<p class="text-capitalize font-heading">7oroof@7oroof.com</p>
-							</div>
-						</div>
-						<!-- .widget end -->
-						<div class="col-xs-12 col-sm-12 col-md-4 widget">
-							<div class="widget-contact-icon pull-left">
-								<i class="lnr lnr-phone"></i>
-							</div>
-							<div class="widget-contact-info">
-								<p class="text-capitalize text-white">call us</p>
-								<p class="text-capitalize font-heading">002 01065370701</p>
-							</div>
-						</div>
-						<!-- .widget end -->
-					</div>
-					<!-- .row end -->
-				</div>
-				<!-- .widget-contact end -->
-			</div>
-			<!-- .col-md-12 end -->
-		</div>
-		<!-- .row end -->
-	</div>
-	<!-- .container end -->
-	
-	<!-- Widget Section
-	============================================= -->
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 widgets-links">
-				<div class="col-xs-12 col-sm-12 col-md-4 widget-about text-center-xs mb-30-xs">
-					<div class="widget-about-logo pull-left pull-none-xs">
-						<img src="assets/images/footer-logo.png" alt="logo"/>
-					</div>
-					<div class="widget-about-info">
-						<h5 class="text-capitalize text-white">yellow hats</h5>
-						<p class="mb-0">Yellow Hats is a leading of A-grade commercial, industrial and residential projects in USA. Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly.</p>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-3 widget-navigation text-center-xs mb-30-xs">
-					<h5 class="text-capitalize text-white"></h5>
-					<div class="row">
-						<div class="col-xs-6 col-sm-6 col-md-6">
-							<ul class="list-unstyled text-capitalize">
-								<li>
-									<a href="#"> about us</a>
-								</li>
-								<li>
-									<a href="#"> careers</a>
-								</li>
-								<li>
-									<a href="#"> pricing plans</a>
-								</li>
-							</ul>
-						</div>
-						<div class="col-xs-6 col-sm-6 col-md-6">
-							<ul class="list-unstyled text-capitalize">
-								<li>
-									<a href="#"> team</a>
-								</li>
-								<li>
-									<a href="#"> projects</a>
-								</li>
-								<li>
-									<a href="#"> FAQs</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-5 widget-services text-center-xs">
-					<h5 class="text-capitalize text-white">services</h5>
-					<div class="row">
-						<div class="col-xs-4 col-sm-4 col-md-4">
-							<ul class="list-unstyled text-capitalize">
-								<li>
-									<a href="#"> design &amp; build</a>
-								</li>
-								<li>
-									<a href="#"> tiling &amp; painting</a>
-								</li>
-								<li>
-									<a href="#"> revonations</a>
-								</li>
-							</ul>
-						</div>
-						<div class="col-xs-4 col-sm-4 col-md-4">
-							<ul class="list-unstyled text-capitalize">
-								<li>
-									<a href="#"> management</a>
-								</li>
-								<li>
-									<a href="#"> wood flooring</a>
-								</li>
-								<li>
-									<a href="#"> work consulting</a>
-								</li>
-							</ul>
-						</div>
-						<div class="col-xs-4 col-sm-4 col-md-4">
-							<ul class="list-unstyled text-capitalize">
-								<li>
-									<a href="#"> wood flooring</a>
-								</li>
-								<li>
-									<a href="#"> green building</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Social bar
-	============================================= -->
-	<div class="widget-social">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-6 mb-30-xs mb-30-sm">
-					<div class="widget-social-info pull-left text-capitalize pull-none-xs mb-15-xs">
-						<p class="mb-0">follow us<br>
-							on social networks</p>
-					</div>
-					<div class="widget-social-icon pull-right text-right pull-none-xs">
-						<a href="#">
-							<i class="fa fa-facebook"></i><i class="fa fa-facebook"></i>
-						</a>
-						<a href="#">
-							<i class="fa fa fa-instagram"></i><i class="fa fa fa-instagram"></i>
-						</a>
-						<a href="#" >
-							<i class="fa fa-twitter"></i><i class="fa fa-twitter"></i>
-						</a>
-						<a href="#">
-							<i class="fa fa-linkedin"></i><i class="fa fa-linkedin"></i>
-						</a>
-						<a href="#">
-							<i class="fa fa-vimeo-square"></i><i class="fa fa-vimeo-square"></i>
-						</a>
-						<a href="#">
-							<i class="fa fa-pinterest"></i><i class="fa fa-pinterest"></i>
-						</a>
-						<a href="#">
-							<i class="fa fa-flickr"></i><i class="fa fa-flickr"></i>
-						</a>
-						<a href="#">
-							<i class="fa fa-rss"></i><i class="fa fa-rss"></i>
-						</a>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-6">
-					<div class="widget-newsletter-info pull-left text-capitalize pull-none-xs mb-15-xs">
-						<p class="mb-0">subsribe<br>
-							on our newsletter</p>
-					</div>
-					<div class="widget-newsletter-form pull-right text-right">
-						
-						<!-- Mailchimp Form 
-						=============================================-->
-						<form class="mailchimp">
-							<div class="subscribe-alert">
-							</div>
-							<div class="input-group">
-								<input type="text" class="form-control" placeholder="Type Your Email Account">
-								<span class="input-group-btn">
-								<button class="btn text-capitalize" type="button">join</button>
-								</span>
-							</div>
-							<!-- /input-group -->
-						</form>
-						<!--Mailchimp Form End-->
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Copyrights
-	============================================= -->
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 copyrights text-center">
-				<p class="text-capitalize">© 2016 - 2017 yellow hats. all rights reserved</p>
-				<p class="text-capitalize">With Love by
-					<a href="http://themeforest.net/user/7oroof/portfolio?ref=7oroof">7oroof.com</a>
-				</p>
-			</div>
-		</div>
-	</div>
-</footer>
+        <!-- Producto 2 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1200&auto=format&fit=crop" alt="Aceite Fresh Herb">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Aceite Corporal — Fresh Herb</strong>
+                <div class="text-secondary small">Menta, albahaca y cedro.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$28</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Aceite Corporal — Fresh Herb"
+                data-price="$28"
+                data-img="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1200&auto=format&fit=crop"
+                data-desc="Blend de aceites ligeros con notas herbales. Nutre sin dejar residuo grasoso y aporta un brillo natural al instante."
+                data-benefits="• Nutrición inmediata|• Acabado no graso|• Aroma herbal refrescante|• Mejora la elasticidad"
+                data-tags="Aceite,Herbal,Todo tipo de piel"
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
 
-<!-- Footer Scripts
-============================================= -->
-<script src="assets/js/jquery-2.1.1.min.js"></script>
-<script src="assets/js/plugins.js?v=1.0.0"></script>
-<script src="assets/js/functions.js?v=1.2.0"></script>
+        <!-- Producto 3 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1612815154858-c3e56b323b6b?q=80&w=1200&auto=format&fit=crop" alt="Loción Hydra Boost">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Loción Doble Extracto — Hydra Boost</strong>
+                <div class="text-secondary small">Hidratación intensa, rápida absorción.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$22</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Loción Doble Extracto — Hydra Boost"
+                data-price="$22"
+                data-img="https://images.unsplash.com/photo-1612815154858-c3e56b323b6b?q=80&w=1200&auto=format&fit=crop"
+                data-desc="Loción corporal de rápida absorción con mezcla de extractos botánicos y glicerina. Deja la piel suave, fresca y confortable."
+                data-benefits="• Hidratación prolongada|• Sensación ligera|• Suaviza y calma|• Apta para uso diario"
+                data-tags="Loción,Hidratación,Piel Normal"
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1592945403244-b3f5f1cbf348?q=80&w=1200&auto=format&fit=crop" alt="Espuma Foam Fresh">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Espuma de Ducha — Foam Fresh</strong>
+                <div class="text-secondary small">Limpieza suave con aceites naturales.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$19</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Espuma de Ducha — Foam Fresh"
+                data-price="$19"
+                data-img="https://images.unsplash.com/photo-1592945403244-b3f5f1cbf348?q=80&w=1200&auto=format&fit=crop"
+                data-desc="Espuma cremosa que limpia sin resecar. Ideal para una ducha suave y perfumada con notas frescas."
+                data-benefits="• Limpieza gentil|• Mantiene la hidratación|• Aroma fresco|• Ideal para uso diario"
+                data-tags="Espuma,Limpieza,Sensible"
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal reutilizable -->
+  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="productModalLabel">Título del producto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body pt-0">
+          <div class="row g-3">
+            <div class="col-12 col-md-5">
+              <img id="modalImg" class="modal-img" src="" alt="Producto">
+            </div>
+            <div class="col-12 col-md-7">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span id="modalPrice" class="badge rounded-pill price"></span>
+                <div id="modalTags" class="d-flex flex-wrap gap-2"></div>
+              </div>
+              <p id="modalDesc" class="text-secondary mb-3"></p>
+              <div>
+                <strong class="d-block mb-1">Beneficios</strong>
+                <ul id="modalBenefits" class="text-secondary mb-0 ps-3"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-dark rounded-pill" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer actualizado -->
+  <footer style="background-color: #788992;">
+    <div class="container text-center" >
+      <img src="assets/images/web-new/Imagotipo - Crema.png" alt="Genesis Skin & Beauty" class="img-fluid" width="100">
+      <div class="widget-social-icon mb-3">
+        <a target='_blank' href="https://instagram.com/piedyccs?igshid=MzRlODBiNWFlZA=="><i class="fa-brands fa-instagram"></i></a>
+        <a target='_blank' href="https://www.tiktok.com/@piedyccs5"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+      <small class="d-block" style="color: #f8f8f8;">© <span id="year"></span> Genesis Skin & Beauty. Todos los derechos reservados.</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Lógica para rellenar el modal -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const modalEl = document.getElementById('productModal');
+    modalEl.addEventListener('show.bs.modal', function (event) {
+      const button = event.relatedTarget;
+      const title = button.getAttribute('data-title') || '';
+      const price = button.getAttribute('data-price') || '';
+      const img   = button.getAttribute('data-img') || '';
+      const desc  = button.getAttribute('data-desc') || '';
+      const benefitsRaw = button.getAttribute('data-benefits') || '';
+      const tagsRaw = button.getAttribute('data-tags') || '';
+
+      const titleEl = modalEl.querySelector('#productModalLabel');
+      const priceEl = modalEl.querySelector('#modalPrice');
+      const imgEl   = modalEl.querySelector('#modalImg');
+      const descEl  = modalEl.querySelector('#modalDesc');
+      const benEl   = modalEl.querySelector('#modalBenefits');
+      const tagsEl  = modalEl.querySelector('#modalTags');
+
+      titleEl.textContent = title;
+      priceEl.textContent = price;
+      imgEl.src = img;
+      imgEl.alt = title;
+      descEl.textContent = desc;
+
+      benEl.innerHTML = '';
+      benefitsRaw.split('|').filter(Boolean).forEach(b => {
+        const li = document.createElement('li');
+        li.textContent = b.replace(/^•\s*/, '');
+        benEl.appendChild(li);
+      });
+
+      tagsEl.innerHTML = '';
+      tagsRaw.split(',').filter(Boolean).forEach(t => {
+        const span = document.createElement('span');
+        span.className = 'badge rounded-pill tag';
+        span.textContent = t.trim();
+        tagsEl.appendChild(span);
+      });
+    });
+  </script>
 </body>
 </html>
