@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="es-ES">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="wplly" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="construction html5 template">
+  <link href="assets/images/favicon/favicon.ico" rel="icon">
+
+  <!-- Fonts -->
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7CRaleway:100,200,300,400,500,600,700,800%7CDroid+Serif:400,400italic,700,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.cdnfonts.com/css/blanquotey" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Tu CSS -->
+  <link href="assets/css/external.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <title>Genesis Skin & Beauty</title>
+
+  <style>
+
+    :root{ --badge-bg:#c2ded1; --badge-ink:#103b33; }
+    .card{ border:0; border-radius:1rem; box-shadow:0 10px 24px rgba(0,0,0,.06); height:100%; }
+    .card-img-top{ border-top-left-radius:1rem; border-top-right-radius:1rem; aspect-ratio:1/1; object-fit:cover; }
+    .price.badge{ background:var(--badge-bg); color:var(--badge-ink); }
+    .modal-img{ width:100%; border-radius:.75rem; object-fit:cover; max-height:320px; }
+    .tag.badge{ background:#f3f4f6; color:#374151; }
+
+  </style>
+</head>
+
+<body>
+
+ <div class="topbar border-bottom">
+    <div class="container py-2 d-flex align-items-center justify-content-between">
+      <a href="index.html" class="btn btn-link px-0" style="color: #788992; text-decoration: none; font-weight: 600;">
+        <i class="fa-solid fa-arrow-left me-2"></i> Volver al inicio
+      </a>
+      <!-- <span class="fw-semibold d-none d-sm-inline">Productos</span> -->
+      <span></span>
+    </div>
+  </div>
+
+   <section class="py-5 border-bottom" style="background:#faf5f2">
+    <div class="container text-center">
+      <h1 class="h2 mb-2">Nuestros Productos</h1>
+    </div>
+  </section>
+
+   <main class="py-4">
+    <div class="container">
+      <div class="row g-3">
+        <!-- Exfoliante Corporal -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="assets/images/catalogo/1.png" alt="Exfoliante Coconut Glow">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Exfoliante Corporal</strong>
+                <div class="text-secondary small">Exfolia, hidrata y aporta elasticidad.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$16</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Exfoliante Corporal"
+                data-price=""
+                data-img="assets/images/catalogo/1.png"
+                data-desc="Exfoliante a base de azúcar que limpia la piel, eliminando impurezas de forma suave."
+                data-benefits="• Suaviza la textura de la piel.|• Aporta brillo saludable.|• Nutre con aceites naturales.|• Aroma tropical relajante."
+                data-tags="Aceite de Almendra Dulce, Colágeno, Niacinamida"
+                data-tags2="Coco Velvet, Fresa Glow, Piña Shine"
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aceite Corporal Esencial -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="assets/images/catalogo/2.png" alt="Aceite Fresh Herb">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Aceite Corporal Esencial</strong>
+                <div class="text-secondary small">Nutre, suaviza y deja la piel con un brillo natural.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$28</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Aceite Corporal Esencial"
+                data-price=""
+                data-img="assets/images/catalogo/2.png"
+                data-desc="Aceite ligero con rápida absorción, ideal para hidratar y perfumar el cuerpo."
+                data-benefits="• Nutrición inmediata.|• Acabado no graso.|• Aroma herbal refrescante.|• Mejora la elasticidad."
+                data-tags="Aceite de Jojoba, Aceite de Girasol, Escualano"
+				        data-tags2="Coco Bliss, Piña Sunset, Fresa Touch"
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loción Corporal Doble Extracto -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="assets/images/catalogo/3.png" alt="Loción Hydra Boost">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Loción Corporal Doble Extracto</strong>
+                <div class="text-secondary small">Hidrata intensamente, calma y revitaliza la piel.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$22</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Loción Corporal Doble Extracto"
+                data-price=""
+                data-img="assets/images/catalogo/3.png"
+                data-desc="Loción corporal de rápida absorción con mezcla de extractos botánicos y glicerina. Deja la piel suave, fresca y confortable."
+                data-benefits="• Hidratación prolongada.|• Sensación ligera.|• Suaviza y calma.|• Apta para uso diario."
+                data-tags="Niacinamida, Manteca de Karité, Extracto de Manzanilla"
+        				data-tags2="Guayaba Paradise, Sandía Mango Temptation Fruit, Papaya Melocotón Exotic Harmony"
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Espuma de Ducha -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="assets/images/catalogo/4.png" alt="Espuma Foam Fresh">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Espuma de Ducha</strong>
+                <div class="text-secondary small">Limpia suavemente, hidrata y mejora la elasticidad.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$19</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Espuma de Ducha"
+                data-price=""
+                data-img="assets/images/catalogo/4.png"
+                data-desc="Espuma de ducha bifásico con aceites que transforma la rutina diaria en un momento sensorial."
+                data-benefits="• Limpieza gentil.|• Mantiene la hidratación.|• Aroma fresco.|• Ideal para uso diario."
+                data-tags="Aceite de Macadamia, Aceite de Aguacate, Niacinamida"
+				        data-tags2="Guayaba Sweet, Sandía Mango Smooth, Papaya Melocotón Fresh"
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
+		   
+        <!-- Exfoliante Corporal de Lujo Shimmer -->
+        <div class="col-12 col-sm-6 col-lg-3"> 
+          <div class="card">
+            <img class="card-img-top" src="assets/images/catalogo/10.png" alt="Exfoliante Coconut Glow">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Exfoliante Corporal de Lujo Shimmer</strong>
+                <div class="text-secondary small">Promueve una textura suave y deja la piel radiante y luminosa.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$16</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Exfoliante Corporal de Lujo Shimmer"
+                data-price=""
+                data-img="assets/images/catalogo/10.png"
+                data-desc="Exfoliante corporal con partículas iluminadoras que dejan un acabado brillante en la piel."
+                data-benefits="• Suaviza la textura de la piel.|• Aporta brillo saludable.|• Nutre con aceites naturales.|• Aroma tropical relajante."
+                data-tags="Ácido Láctico, Mica Sintética, Glicerina"
+				        data-tags2="Velvet Petals, Luxe Glow, Golden Glow"
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Crema Corporal -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="assets/images/catalogo/11.png" alt="Aceite Fresh Herb">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Crema Corporal</strong>
+                <div class="text-secondary small">Hidrata profundamente, calma y mejora la firmeza.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$28</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Crema Corporal"
+                data-price=""
+                data-img="assets/images/catalogo/11.png"
+                data-desc="Crema rica y nutritiva, ideal para uso diario y cuidado prolongado."
+                data-benefits="• Nutrición inmediata.|• Acabado no graso.|• Aroma herbal refrescante.|• Mejora la elasticidad."
+                data-tags="Manteca de Karité, Manteca de Cacao, Centella Asiática"
+				        data-tags2="Sunset Beach"
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kit Travel -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="assets/images/catalogo/9.png" alt="Loción Hydra Boost">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Kit Travel</strong>
+                <div class="text-secondary small">Un set práctico y exclusivo.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$22</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Kit Travel"
+                data-price=""
+                data-img="assets/images/catalogo/9.png"
+                data-desc="Un set práctico y exclusivo que reúne tres productos esenciales: Body Butter, Shower Gel y Body Mist. Su fragancia floral con toques frescos crea una experiencia relajante y nutritiva, ideal para llevar de viaje o disfrutar en tu rutina diaria."
+                data-benefits="• Hidratación profunda y duradera.|• Mejora la firmeza y elasticidad de la piel.|• Aporta frescura y un delicado aroma tropical-floral.|• Formato práctico para viajes o uso diario."
+                data-tags="Manteca de Karité y Cacao, Niacinamida, Vitamina E, Aceites de Almendra, Aguacate y Macadamia, "
+				        data-tags2="Milk & Jade Flower"
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Parches para ojos en gel -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="assets/images/catalogo/7.png" alt="Espuma Foam Fresh">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Parches para ojos en gel</strong>
+                <div class="text-secondary small">Hidrata, protege y mejora la firmeza de la piel.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$19</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Parches para ojos en gel"
+                data-price=""
+                data-img="assets/images/catalogo/7.png"
+                data-desc="Tratamiento específico para el contorno de ojos que hidrata, protege y mejora la firmeza de la piel delicada alrededor de los ojos."
+                data-benefits="• Hidrata profundamente y combate la sequedad.|• Reduce bolsas, patas de gallo y signos de fatiga.|• Reafirma y protege la piel delicada del contorno de ojos."
+                data-tags="Alantoína,Carragenina,Glicerina"
+				        data-tags2=""
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
+
+         <!-- Mascarilla Hidrogel para ojos -->
+        <div class="col-12 col-sm-6 col-lg-3">  
+          <div class="card">
+            <img class="card-img-top" src="assets/images/catalogo/8.png" alt="Espuma Foam Fresh">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Mascarilla Hidrogel para ojos</strong>
+                <div class="text-secondary small">Reduce líneas finas, reafirmante y brillante.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$19</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Mascarilla Hidrogel para ojos"
+                data-price="$19"
+                data-img="assets/images/catalogo/8.png"
+                data-desc="Nutre y lubrica la piel, reduce la formación de piel muerta y cutícula causada por la sequedad; puede suavizar la piel y resistir la oxidación."
+                data-benefits="• Combate la flacidez y mejora la firmeza de la piel.|• Hidrata y suaviza, reduciendo sequedad y descamación.|• Ilumina el tono, disminuye manchas y mejora la textura cutánea."
+                data-tags="Colágeno Hidrolizado,Extracto de Verdolaga,Niacinamida"
+				        data-tags2=""
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
+
+         <!-- Mascarilla hidratante para pies -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="assets/images/catalogo/5.png" alt="Espuma Foam Fresh">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Mascarilla Hidratante y Nutritiva Para Pies</strong>
+                <div class="text-secondary small">Nutre, regenera y mejora la elasticidad de la piel.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$19</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Mascarilla Hidratante y Nutritiva Para Pies"
+                data-price="$19"
+                data-img="assets/images/catalogo/5.png"
+                data-desc="Su fórmula rica en aceites naturales e ingredientes iluminadores hidrata intensamente, suaviza y devuelve vitalidad a la piel, dejándola más luminosa y saludable."
+                data-benefits="• Repara la piel seca y los talones agrietados.|• Aumenta la hidratación y la suavidad.|• Aporta luminosidad y vitalidad a pies y piernas."
+                data-tags="Aceite de Argán,Manteca de Karité,Niacinamida"
+				        data-tags2=""
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
+
+         <!-- Mascarilla para manos -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="assets/images/catalogo/6.png" alt="Espuma Foam Fresh">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Mascarilla Nutritiva e Hidratante Para Manos</strong>
+                <div class="text-secondary small">Manos suaves, radiantes y protegidas.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$19</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Mascarilla Nutritiva e Hidratante Para Manos Y Uñas"
+                data-price=""
+                data-img="assets/images/catalogo/6.png"
+                data-desc="Su fórmula nutritiva suave y respetuosa con la piel nutre profundamente la piel seca de las manos, reduce la pérdida de hidratación superficial y la rehidrata eficazmente. "
+                data-benefits="• Hidrata y repara la piel seca de las manos.|• Ilumina y mejora la apariencia de manos opacas y ásperas.|• Diseño sin dedos que permite manicura impecable mientras protege la piel."
+                data-tags="Aceite de Argán,Manteca de Karité,Niacinamida"
+				        data-tags2=""
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="productModalLabel">Título del producto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body pt-0">
+          <div class="row g-3">
+            <div class="col-12 col-md-5">
+              <img id="modalImg" class="modal-img" src="" alt="Producto">
+            </div>
+            <div class="col-12 col-md-7">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span id="modalPrice" class="badge rounded-pill price"></span>
+                <div id="modalTags" class="d-flex flex-wrap gap-2"></div>
+              </div>
+              <br>
+              <p id="modalDesc" class="text-secondary mb-3"></p>
+              <div>
+                <strong class="d-block mb-1">Beneficios</strong>
+                <ul id="modalBenefits" class="text-secondary mb-0 ps-3"></ul>
+              </div>
+             <div id="modalAromasBlock" class="mt-3" style="display:none;">
+                <strong class="d-block mb-1">Aromas disponibles</strong>
+                <div id="modalAromas" class="d-flex flex-wrap gap-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-outline-dark w-25 rounded-pill" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 widgets-links">
+          <div class="col-xs-12 col-sm-12 col-md-12 widget-about text-center mb-30-xs">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="widget-about-logo-footer pull-none">
+                  <img src="assets/images/web-new/Imagotipo - Crema.png" alt="logo" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12" style="display:flex;justify-content:center;">
+                <div class="widget-social-icon pull-none">
+                  <a target='_blank' href="https://instagram.com/piedyccs?igshid=MzRlODBiNWFlZA==" style="text-decoration: none;"><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-instagram"></i></a>
+                  <a target='_blank' href="https://www.tiktok.com/@piedyccs5" style="text-decoration: none;"><i class="fab fa-tiktok"></i><i class="fa-brands fa-tiktok"></i></a>
+                  <!-- <a target='_blank' href="https://wa.link/84zv5s"><i class="fa-brands fa-whatsapp"></i><i class="fa-brands fa-whatsapp"></i></a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 copyrights text-center">
+          <p class="text-capitalize">© 2025 Copyright: All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Lógica para rellenar el modal -->
+  <script>
+    const modalEl = document.getElementById('productModal');
+    modalEl.addEventListener('show.bs.modal', function (event) {
+      const button = event.relatedTarget;
+      const title = button.getAttribute('data-title') || '';
+      const price = button.getAttribute('data-price') || '';
+      const img   = button.getAttribute('data-img') || '';
+      const desc  = button.getAttribute('data-desc') || '';
+      const benefitsRaw = button.getAttribute('data-benefits') || '';
+      const tagsRaw = button.getAttribute('data-tags') || '';
+      const tagsRaw2 = button.getAttribute('data-tags2') || '';
+
+      const titleEl = modalEl.querySelector('#productModalLabel');
+      const priceEl = modalEl.querySelector('#modalPrice');
+      const imgEl   = modalEl.querySelector('#modalImg');
+      const descEl  = modalEl.querySelector('#modalDesc');
+      const benEl   = modalEl.querySelector('#modalBenefits');
+      const tagsEl  = modalEl.querySelector('#modalTags');
+      const aromasBlock = modalEl.querySelector('#modalAromasBlock');
+      const aromasEl  = modalEl.querySelector('#modalAromas');
+
+      titleEl.textContent = title;
+      priceEl.textContent = price;
+      imgEl.src = img;
+      imgEl.alt = title;
+      descEl.textContent = desc;
+
+      benEl.innerHTML = '';
+      benefitsRaw.split('|').filter(Boolean).forEach(b => {
+        const li = document.createElement('li');
+        li.textContent = b.replace(/^•\s*/, '');
+        benEl.appendChild(li);
+      });
+
+      tagsEl.innerHTML = '';
+      tagsRaw.split(',').filter(Boolean).forEach(t => {
+        const span = document.createElement('span');
+        span.className = 'badge rounded-pill tag';
+        span.textContent = t.trim();
+        tagsEl.appendChild(span);
+      });
+	  
+	  // tagsElA.innerHTML = '';
+    //   tagsRaw2.split(',').filter(Boolean).forEach(t => {
+    //     const span = document.createElement('span');
+    //     span.className = 'badge rounded-pill tag';
+    //     span.style = 'background: #788992; color: #ffffff;';
+    //     span.textContent = t.trim();
+    //     tagsElA.appendChild(span);
+    //   });
+
+       aromasEl.innerHTML = '';
+    const aromas = tagsRaw2.split(',').map(a => a.trim()).filter(Boolean);
+
+    if (aromas.length > 0) {
+      aromas.forEach(a => {
+        const span = document.createElement('span');
+        span.className = 'badge rounded-pill tag';
+        span.style = 'background: #788992; color: #ffffff;';
+        span.textContent = a;
+        aromasEl.appendChild(span);
+      });
+      aromasBlock.style.display = ''; // mostrar
+    } else {
+      aromasBlock.style.display = 'none'; // ocultar
+    }
+    });
+  </script>
+  </body>
+</html>

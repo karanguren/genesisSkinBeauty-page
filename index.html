@@ -49,35 +49,21 @@
     .logos img{object-fit:contain;filter:grayscale(100%);opacity:.75;transition:transform .3s ease,filter .3s ease,opacity .3s ease}
     .logos img:hover{transform:scale(1.08);filter:none;opacity:1}
 
+    .btn:hover {background-color: #607d8b; border-color: #607d8b;}
     .btn-dark{transition:all .25s ease}
-    .btn-dark:hover{background:linear-gradient(180deg,var(--accent),#f7dcd9);color:#111;transform:translateY(-2px);box-shadow:0 10px 24px rgba(231,185,181,.35)}
+    .btn-dark:hover{background:linear-gradient(180deg,var(--accent),#ebc4c0);color:#111;transform:translateY(-2px);box-shadow:0 10px 24px rgba(231,185,181,.35)}
     .btn-outline-light{transition:all .25s ease}
-    .btn-outline-light:hover{background:#fff;color:var(--ink);transform:scale(1.05)}
+    .btn-outline-light:hover{background:#ebc4c0;color:#111;transform:scale(1.05)}
     .card{transition:transform .3s ease, box-shadow .3s ease}
-    .card:hover{transform:translateY(-6px);box-shadow:0 16px 30px rgba(0,0,0,.12)}
+    .card:hover{transform:translateY(-6px);box-shadow:0 16px 30px #ebc4c0}
 
     @keyframes fadeInDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
     @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
-    .card{position:relative;display:flex;flex-direction:column;min-width:0;color:#212529;word-wrap:break-word;background-color:#c0afac;background-clip:border-box;border:none;border-radius:10px}
+    .card{position:relative;display:flex;flex-direction:column;min-width:0;color:#212529;word-wrap:break-word;background-color:#ffffff;background-clip:border-box;border:none;border-radius:10px}
     .card-img,.card-img-top{border-top-left-radius:10px;border-top-right-radius:10px}
     .card-body{flex:1 1 auto;padding:1rem;color:var(--bs-card-color)}
 
-    #primary-menu .nav-link { 
-      display: flex; 
-      align-items: center; 
-    }
-
-    .navbar-toggler:focus
-    {
-        box-shadow: none !important;
-    }
-
-    @media (max-width: 991.98px){
-      #bs-example-navbar-collapse-1 {
-        padding: .5rem 1rem;   /* separa del borde */
-      }
-    }
   </style>
 </head>
 
@@ -88,35 +74,6 @@
       <div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div>
     </div>
   </div>
-
-<!-- <header id="navbar-spy" class="transparent-header">
-  <nav id="primary-menu" class="navbar navbar-expand-lg navbar-light fixed-top bg-transparent py-2">
-    <div class="container d-flex align-items-center" style="padding:0 !important;">
-
-      <button class="navbar-toggle navbar-toggler border-0"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#bs-example-navbar-collapse-1"
-              aria-controls="bs-example-navbar-collapse-1"
-              aria-expanded="false"
-              aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-lg-end" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-left ms-auto align-items-lg-center gap-lg-3 ps-3 ps-lg-0">
-          <li class="nav-item">
-            <a class="nav-link nav-ink" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-ink" href="pricing.html">Catálogo</a>
-          </li>
-        </ul>
-
-      </div>
-    </div>
-  </nav>
-</header> -->
 
   <section class="hero-section">
     <div class="hero-overlay"></div>
@@ -195,22 +152,10 @@
       <p class="text-secondary mb-4">Explora nuestra línea completa de cuidado: exfoliantes, aceites, lociones y más, diseñados para nutrir y embellecer tu piel.</p>
 
       <div class="row g-3">
+      
         <div class="col-12 col-sm-6 col-lg-3">
           <div class="card h-100 rounded-4 shadow-sm border-0">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=1200&auto=format&fit=crop" alt="Exfoliante Corporal" />
-            <div class="card-body d-flex align-items-center gap-2">
-              <div>
-                <strong>Exfoliante Corporal</strong>
-                <div class="text-secondary small">Suaviza e hidrata la piel dejándola luminosa y con aroma tropical.</div>
-              </div>
-              <span class="ms-auto badge rounded-pill" style="background:#c2ded1;color:#103b33">$16</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="card h-100 rounded-4 shadow-sm border-0">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=1200&auto=format&fit=crop" alt="Aceite Corporal Esencial" />
+            <img class="card-img-top" src="assets/images/catalogo/2a.png" alt="Aceite Corporal Esencial" />
             <div class="card-body d-flex align-items-center gap-2">
               <div>
                 <strong>Aceite Corporal Esencial</strong>
@@ -223,7 +168,20 @@
 
         <div class="col-12 col-sm-6 col-lg-3">
           <div class="card h-100 rounded-4 shadow-sm border-0">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=1200&auto=format&fit=crop" alt="Loción Corporal de Doble Extracto" />
+            <img class="card-img-top" src="assets/images/catalogo/1a.png" alt="Exfoliante Corporal" />
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Exfoliante Corporal</strong>
+                <div class="text-secondary small">Suaviza e hidrata la piel dejándola luminosa y con aroma tropical.</div>
+              </div>
+              <span class="ms-auto badge rounded-pill" style="background:#c2ded1;color:#103b33">$16</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card h-100 rounded-4 shadow-sm border-0">
+            <img class="card-img-top" src="assets/images/catalogo/3a.png" alt="Loción Corporal de Doble Extracto" />
             <div class="card-body d-flex align-items-center gap-2">
               <div>
                 <strong>Loción Corporal de Doble Extracto</strong>
@@ -236,7 +194,7 @@
 
         <div class="col-12 col-sm-6 col-lg-3">
           <div class="card h-100 rounded-4 shadow-sm border-0">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=1200&auto=format&fit=crop" alt="Espuma de Ducha" />
+            <img class="card-img-top" src="assets/images/catalogo/4a.png" alt="Espuma de Ducha" />
             <div class="card-body d-flex align-items-center gap-2">
               <div>
                 <strong>Espuma de Ducha</strong>
@@ -249,7 +207,7 @@
       </div>
 
       <div class="text-center mt-4" style="margin-top:3rem;">
-        <a href="productos.html" class="btn btn-dark rounded-pill px-4" style="color:#111;background-color:coral;">Ver más productos</a>
+        <a href="productos.html" class="btn btn-outline-dark w-25 rounded-pill px-4">Ver más productos</a>
       </div>
     </div>
   </section>
@@ -342,9 +300,7 @@
 
     function applyScrolledState(scrolled){
       if(scrolled){
-        nav.classList.add('bg-white');
-        // Si deseas invertir logo en claro/oscuro, cambia el src aquí:
-        // brandImg.src = 'assets/images/web-new/Imagotipo - Negro.png';
+        nav.classList.add('bg-white');    
       } else {
         nav.classList.remove('bg-white');
         // brandImg.src = 'assets/images/web-new/Imagotipo - Negro.png';
@@ -355,14 +311,12 @@
       applyScrolledState(window.scrollY > 24);
     }
 
-    // Inicia estado correcto
     onScroll();
     window.addEventListener('scroll', onScroll, {passive:true});
   })();
 </script>
 
   <script>
-    // Mantengo tu script de colapsables por si lo usas en otra parte
     var coll = document.getElementsByClassName("collapsible");
     for (var i = 0; i < coll.length; i++) {
       coll[i].addEventListener("click", function () {

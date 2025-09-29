@@ -1,196 +1,227 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html dir="ltr" lang="es-ES">
 <head>
-  <!-- Document Meta
-============================================= -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!--IE Compatibility Meta-->
   <meta name="author" content="wplly" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="construction html5 template">
   <link href="assets/images/favicon/favicon.ico" rel="icon">
 
-
-
-  <!-- Fonts
-============================================= -->
-  <link
-    href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CRaleway:100,200,300,400,500,600,700,800%7CDroid+Serif:400,400italic,700,700italic'
-    rel='stylesheet' type='text/css'>
+  <!-- Fonts -->
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7CRaleway:100,200,300,400,500,600,700,800%7CDroid+Serif:400,400italic,700,700italic" rel="stylesheet" type="text/css">
   <link href="https://fonts.cdnfonts.com/css/blanquotey" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Stylesheets
-============================================= -->
-  <link href="assets/css/external.css" rel="stylesheet">
-  <!-- Extrnal CSS -->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Boostrap Core CSS -->
+  <!-- Bootstrap 5 CSS (nuevo) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Tu CSS -->
+  <link href="assets/css/external.css" rel="stylesheet">
+  <!-- ⚠️ Bootstrap 3 local DESACTIVADO para evitar conflictos -->
+  <!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet"> -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <!-- Style CSS -->
 
   <title>Genesis Skin & Beauty</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <style>
-    .brand-title{font-family:"Playfair Display",serif}
-    .thumb{cursor:pointer;border:1px solid #eee;border-radius:10px;height:60px;object-fit:cover}
-    .thumb.active{outline:2px solid #111}
-    .main-img{border:1px solid #eee;border-radius:14px;max-height:420px;object-fit:contain;background:#fff}
-    .badge-soft{background:#fff;border:1px solid #eee;border-radius:999px;padding:.3rem .6rem;font-size:.85rem;color:#374151}
-    .section-title{font-family:"Playfair Display",serif;font-size:1.35rem;margin-bottom:.5rem}
-    .logos img{height:34px;filter:grayscale(100%);opacity:.7}
-    @media (max-width:576px){
-      .main-img{max-height:320px}
-      .thumb{height:52px}
+
+    :root{ --badge-bg:#c2ded1; --badge-ink:#103b33; }
+    .card{ border:0; border-radius:1rem; box-shadow:0 10px 24px rgba(0,0,0,.06); height:100%; }
+    .card-img-top{ border-top-left-radius:1rem; border-top-right-radius:1rem; aspect-ratio:1/1; object-fit:cover; }
+    .price.badge{ background:var(--badge-bg); color:var(--badge-ink); }
+    .modal-img{ width:100%; border-radius:.75rem; object-fit:cover; max-height:320px; }
+    .tag.badge{ background:#f3f4f6; color:#374151; }
+
+    /* Top bar (botón volver) */
+    .topbar{ position:sticky; top:0; z-index:1020; backdrop-filter:saturate(180%) blur(8px); background:rgba(255,255,255,.8); }
+
+    /* (Estilos existentes que venían en el documento) */
+    .widget-social-icon a{ color:#111; font-size:1.5rem; margin:0 .5rem; transition:color .3s; }
+    .widget-social-icon a:hover{ color:#c0afacdb; }
+
+    #primary-menu .nav-link { 
+      display: flex; 
+      align-items: center; 
+    }
+
+    .navbar-toggler:focus
+    {
+        box-shadow: none !important;
+    }
+
+    @media (max-width: 991.98px){
+      #bs-example-navbar-collapse-1 {
+        padding: .5rem 1rem;   /* separa del borde */
+      }
     }
   </style>
 </head>
 
 <body>
 
-
-  <!-- Header
-    ============================================= -->
-   <header class="navbar navbar-expand-lg navbar-light bg-transparent sticky-top">
-    <div class="container">
-
-      <button class="navbar-toggler" type="button"
-              data-bs-toggle="collapse" data-bs-target="#mainNav"
-              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <nav id="mainNav" class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="pricing.html">Catálogo</a></li>
-          <li class="nav-item"><a class="nav-link" href="#beneficios">Beneficios</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certificaciones">Certificaciones</a></li>
-        </ul>
-      </nav>
+ <div class="topbar border-bottom">
+    <div class="container py-2 d-flex align-items-center justify-content-between">
+      <a href="index.html" class="btn btn-link px-0">
+        <i class="fa-solid fa-arrow-left me-2"></i> Volver al inicio
+      </a>
+      <span class="fw-semibold d-none d-sm-inline">Productos</span>
+      <span></span>
     </div>
-  </header>
+  </div>
 
-  <section>
+   <section class="py-5 border-bottom" style="background:#faf5f2">
     <div class="container">
-  
-      <!-- Encabezado simple -->
-      <div class="mb-3">
-        <h1 class="brand-title h3 mb-1">Sérum Vitamina C 15%</h1>
-        <div class="d-flex flex-wrap gap-2">
-          <span class="badge-soft">30 ml</span>
-          <span class="badge-soft">Cruelty-Free</span>
-          <span class="badge-soft">Sin fragancia</span>
-        </div>
-      </div>
-  
-      <!-- Dos columnas: imagen + texto -->
-      <div class="row g-4 align-items-start">
-        <!-- Galería muy simple -->
-        <div class="col-lg-5">
-          <img id="mainImg" class="w-100 main-img" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=1600&auto=format&fit=crop" alt="Serum Vitamina C">
-          <div class="row g-2 mt-2">
-            <div class="col-3">
-              <img class="thumb w-100 active" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=600&auto=format&fit=crop" data-full="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=1600&auto=format&fit=crop" alt="">
-            </div>
-            <div class="col-3">
-              <img class="thumb w-100" src="https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=600&auto=format&fit=crop" data-full="https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=1600&auto=format&fit=crop" alt="">
-            </div>
-            <div class="col-3">
-              <img class="thumb w-100" src="https://images.unsplash.com/photo-1598133894008-5df8c1f6b44f?q=80&w=600&auto=format&fit=crop" data-full="https://images.unsplash.com/photo-1598133894008-5df8c1f6b44f?q=80&w=1600&auto=format&fit=crop" alt="">
-            </div>
-            <div class="col-3">
-              <img class="thumb w-100" src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=600&auto=format&fit=crop" data-full="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1600&auto=format&fit=crop" alt="">
-            </div>
-          </div>
-        </div>
-  
-        <!-- Texto esencial -->
-        <div class="col-lg-7">
-          <p class="text-secondary">Brillo, firmeza y tono uniforme con vitamina C estable + niacinamida. Textura ligera de rápida absorción.</p>
-  
-          <div class="row g-4">
-            <div class="col-12 col-md-6">
-              <h2 class="section-title">Beneficios</h2>
-              <ul class="text-secondary mb-0">
-                <li>Aporta brillo y suaviza la textura.</li>
-                <li>Unifica el tono y mejora manchas.</li>
-                <li>Ligero, no pegajoso.</li>
-                <li>Ideal de día + SPF.</li>
-              </ul>
-            </div>
-            <div class="col-12 col-md-6">
-              <h2 class="section-title">Ingredientes</h2>
-              <p class="text-secondary mb-1">Agua, Ascorbyl Glucoside (15%), Niacinamida (5%), Ácido Hialurónico, Glicerina, Pantenol.</p>
-              <div class="small text-secondary">
-                • Sin alcohol · • Sin fragancias · • pH 5.8 · • Dermatológicamente probado
-              </div>
-            </div>
-            <div class="col-12">
-              <h2 class="section-title">Modo de uso</h2>
-              <p class="text-secondary mb-0">Por la mañana sobre piel limpia y seca. Aplica 3–4 gotas en rostro y cuello. Continúa con hidratante y protector solar.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-  
-      <!-- Otras fragancias (simple) -->
-      <section class="mt-5">
-        <h3 class="section-title">Otras fragancias</h3>
-        <div class="row g-3">
-          <div class="col-6 col-md-3">
-            <a class="card border-0 shadow-sm h-100" href="#">
-              <img class="card-img-top" src="https://images.unsplash.com/photo-1556228453-efd1c9c5fbd9?q=80&w=1200&auto=format&fit=crop" alt="">
-              <div class="card-body">
-                <strong class="d-block">Citrus Bloom</strong>
-                <small class="text-secondary">Bergamota • Naranja</small>
-              </div>
-            </a>
-          </div>
-          <div class="col-6 col-md-3">
-            <a class="card border-0 shadow-sm h-100" href="#">
-              <img class="card-img-top" src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=1200&auto=format&fit=crop" alt="">
-              <div class="card-body">
-                <strong class="d-block">Rose Velvet</strong>
-                <small class="text-secondary">Rosa • Peonía</small>
-              </div>
-            </a>
-          </div>
-          <div class="col-6 col-md-3">
-            <a class="card border-0 shadow-sm h-100" href="#">
-              <img class="card-img-top" src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=1200&auto=format&fit=crop" alt="">
-              <div class="card-body">
-                <strong class="d-block">Amber Noir</strong>
-                <small class="text-secondary">Ámbar • Maderas</small>
-              </div>
-            </a>
-          </div>
-          <div class="col-6 col-md-3">
-            <a class="card border-0 shadow-sm h-100" href="#">
-              <img class="card-img-top" src="https://images.unsplash.com/photo-1592945403244-b3f5f1cbf348?q=80&w=1200&auto=format&fit=crop" alt="">
-              <div class="card-body">
-                <strong class="d-block">Fresh Herb</strong>
-                <small class="text-secondary">Menta • Albahaca</small>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-  
+      <h1 class="h2 mb-2">Catálogo de productos</h1>
+      <p class="text-secondary mb-0">Haz clic en cualquier producto para ver su descripción completa.</p>
     </div>
   </section>
 
+   <main class="py-4">
+    <div class="container">
+      <div class="row g-3">
+        <!-- Producto 1 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=1200&auto=format&fit=crop" alt="Exfoliante Coconut Glow">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Exfoliante — Coconut Glow</strong>
+                <div class="text-secondary small">Suaviza e hidrata con aroma tropical.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$16</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Exfoliante Corporal — Coconut Glow"
+                data-price="$16"
+                data-img="https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=1200&auto=format&fit=crop"
+                data-desc="Exfoliante corporal con cristales finos de azúcar y aceites nutritivos. Elimina células muertas, deja la piel tersa y luminosa con un sutil aroma a coco."
+                data-benefits="• Suaviza la textura de la piel|• Aporta brillo saludable|• Nutre con aceites naturales|• Aroma tropical relajante"
+                data-tags="Exfoliante,Tropical,Piel Seca"
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
 
+        <!-- Producto 2 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1200&auto=format&fit=crop" alt="Aceite Fresh Herb">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Aceite Corporal — Fresh Herb</strong>
+                <div class="text-secondary small">Menta, albahaca y cedro.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$28</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Aceite Corporal — Fresh Herb"
+                data-price="$28"
+                data-img="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1200&auto=format&fit=crop"
+                data-desc="Blend de aceites ligeros con notas herbales. Nutre sin dejar residuo grasoso y aporta un brillo natural al instante."
+                data-benefits="• Nutrición inmediata|• Acabado no graso|• Aroma herbal refrescante|• Mejora la elasticidad"
+                data-tags="Aceite,Herbal,Todo tipo de piel"
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
 
-  <!-- ======== FOOTER (se mantiene) ======== -->
+        <!-- Producto 3 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1612815154858-c3e56b323b6b?q=80&w=1200&auto=format&fit=crop" alt="Loción Hydra Boost">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Loción Doble Extracto — Hydra Boost</strong>
+                <div class="text-secondary small">Hidratación intensa, rápida absorción.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$22</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Loción Doble Extracto — Hydra Boost"
+                data-price="$22"
+                data-img="https://images.unsplash.com/photo-1612815154858-c3e56b323b6b?q=80&w=1200&auto=format&fit=crop"
+                data-desc="Loción corporal de rápida absorción con mezcla de extractos botánicos y glicerina. Deja la piel suave, fresca y confortable."
+                data-benefits="• Hidratación prolongada|• Sensación ligera|• Suaviza y calma|• Apta para uso diario"
+                data-tags="Loción,Hidratación,Piel Normal"
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1592945403244-b3f5f1cbf348?q=80&w=1200&auto=format&fit=crop" alt="Espuma Foam Fresh">
+            <div class="card-body d-flex align-items-center gap-2">
+              <div>
+                <strong>Espuma de Ducha — Foam Fresh</strong>
+                <div class="text-secondary small">Limpieza suave con aceites naturales.</div>
+              </div>
+              <span class="ms-auto badge price rounded-pill">$19</span>
+            </div>
+            <div class="p-3 pt-0">
+              <button
+                class="btn btn-outline-dark w-100 rounded-pill"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-title="Espuma de Ducha — Foam Fresh"
+                data-price="$19"
+                data-img="https://images.unsplash.com/photo-1592945403244-b3f5f1cbf348?q=80&w=1200&auto=format&fit=crop"
+                data-desc="Espuma cremosa que limpia sin resecar. Ideal para una ducha suave y perfumada con notas frescas."
+                data-benefits="• Limpieza gentil|• Mantiene la hidratación|• Aroma fresco|• Ideal para uso diario"
+                data-tags="Espuma,Limpieza,Sensible"
+              >Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  
+
+  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="productModalLabel">Título del producto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body pt-0">
+          <div class="row g-3">
+            <div class="col-12 col-md-5">
+              <img id="modalImg" class="modal-img" src="" alt="Producto">
+            </div>
+            <div class="col-12 col-md-7">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span id="modalPrice" class="badge rounded-pill price"></span>
+                <div id="modalTags" class="d-flex flex-wrap gap-2"></div>
+              </div>
+              <p id="modalDesc" class="text-secondary mb-3"></p>
+              <div>
+                <strong class="d-block mb-1">Beneficios</strong>
+                <ul id="modalBenefits" class="text-secondary mb-0 ps-3"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-dark rounded-pill" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer id="footer" class="footer-3">
     <div class="container">
       <div class="row">
@@ -204,14 +235,11 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12" style="display: flex; justify-content: center;">
+              <div class="col-xs-12 col-sm-12 col-md-12" style="display:flex;justify-content:center;">
                 <div class="widget-social-icon pull-none">
-                  <a target='_blank' href="https://instagram.com/piedyccs?igshid=MzRlODBiNWFlZA=="><i
-                      class="fa-brands fa-instagram"></i><i class="fa-brands fa-instagram"></i></a>
-                  <a target='_blank' href="https://www.tiktok.com/@piedyccs5"><i class="fab fa-tiktok"></i><i
-                      class="fa-brands fa-tiktok"></i></a>
-                  <a target='_blank' href="https://wa.link/84zv5s"><i class="fa-brands fa-whatsapp"></i><i
-                      class="fa-brands fa-whatsapp"></i></a>
+                  <a target='_blank' href="https://instagram.com/piedyccs?igshid=MzRlODBiNWFlZA==" style="text-decoration: none;"><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-instagram"></i></a>
+                  <a target='_blank' href="https://www.tiktok.com/@piedyccs5" style="text-decoration: none;"><i class="fab fa-tiktok"></i><i class="fa-brands fa-tiktok"></i></a>
+                  <!-- <a target='_blank' href="https://wa.link/84zv5s"><i class="fa-brands fa-whatsapp"></i><i class="fa-brands fa-whatsapp"></i></a> -->
                 </div>
               </div>
             </div>
@@ -229,20 +257,49 @@
     </div>
   </footer>
 
-  <script>
-    // Año dinámico
-    document.getElementById('year').textContent = new Date().getFullYear();
+    <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    // Cambiar imagen principal desde thumbnails
-    const mainImg = document.getElementById('mainImg');
-    document.querySelectorAll('.thumb').forEach((t) => {
-      t.addEventListener('click', () => {
-        document.querySelectorAll('.thumb').forEach(x => x.classList.remove('active'));
-        t.classList.add('active');
-        mainImg.src = t.getAttribute('data-full');
+  <!-- Lógica para rellenar el modal (intacta) -->
+  <script>
+    const modalEl = document.getElementById('productModal');
+    modalEl.addEventListener('show.bs.modal', function (event) {
+      const button = event.relatedTarget;
+      const title = button.getAttribute('data-title') || '';
+      const price = button.getAttribute('data-price') || '';
+      const img   = button.getAttribute('data-img') || '';
+      const desc  = button.getAttribute('data-desc') || '';
+      const benefitsRaw = button.getAttribute('data-benefits') || '';
+      const tagsRaw = button.getAttribute('data-tags') || '';
+
+      const titleEl = modalEl.querySelector('#productModalLabel');
+      const priceEl = modalEl.querySelector('#modalPrice');
+      const imgEl   = modalEl.querySelector('#modalImg');
+      const descEl  = modalEl.querySelector('#modalDesc');
+      const benEl   = modalEl.querySelector('#modalBenefits');
+      const tagsEl  = modalEl.querySelector('#modalTags');
+
+      titleEl.textContent = title;
+      priceEl.textContent = price;
+      imgEl.src = img;
+      imgEl.alt = title;
+      descEl.textContent = desc;
+
+      benEl.innerHTML = '';
+      benefitsRaw.split('|').filter(Boolean).forEach(b => {
+        const li = document.createElement('li');
+        li.textContent = b.replace(/^•\s*/, '');
+        benEl.appendChild(li);
+      });
+
+      tagsEl.innerHTML = '';
+      tagsRaw.split(',').filter(Boolean).forEach(t => {
+        const span = document.createElement('span');
+        span.className = 'badge rounded-pill tag';
+        span.textContent = t.trim();
+        tagsEl.appendChild(span);
       });
     });
   </script>
-</body>
-
+  </body>
 </html>
